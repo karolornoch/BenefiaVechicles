@@ -58,5 +58,7 @@ class InpVehCriteria extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a valid XML string', var_export($any, true)), __LINE__);
         }
         $this->any = ($any instanceof \DOMDocument) ? $any->saveXML($any->hasChildNodes() ? $any->childNodes->item(0) : null) : $any;
+
+        return $this;
     }
 }
